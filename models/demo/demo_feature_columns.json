@@ -1,0 +1,14 @@
+{
+  "feature_columns": [
+    "CreditScore",
+    "AnnualIncome",
+    "LoanAmount",
+    "LoanDuration",
+    "MonthlyDebtPayments",
+    "SavingsAccountBalance",
+    "CheckingAccountBalance",
+    "EmploymentStatus",
+    "PreviousLoanDefaults",
+    "BankruptcyHistory"
+  ]
+}
