@@ -87,6 +87,10 @@ Tools used:
 Cross-validation:
 - 5-fold CV used for robustness
 
+Training details:
+- Models were trained using default and tuned hyperparameters
+- Data was split into train, validation, and test sets
+- Threshold tuning was performed using validation F1-score
 ---
 
 ## 8. Results
@@ -129,9 +133,15 @@ Cross-validation:
 Logistic Regression coefficients were used for interpretability.
 
 Key insights:
-- Higher income increases approval probability
-- Higher debt burden decreases approval probability
-- Loan-to-income ratio is a critical decision factor
+- Higher income (MonthlyIncome) increases approval probability because it reflects stronger repayment capacity.
+- Higher debt burden (MonthlyDebtBurden) decreases approval probability as it indicates financial risk.
+- Loan-to-income ratio is a critical feature that directly captures affordability.
+
+These features influence the model through their coefficients:
+- Positive coefficients increase approval probability
+- Negative coefficients decrease approval probability
+
+This allows the model to form a clear decision boundary based on financial stability indicators.
 
 #### Feature Importance
 ![Feature Importance](images/logistic_feature_importance.png)
@@ -200,14 +210,14 @@ streamlit run app.py
 
 ```
 loan-approval-prediction/
-├── app.py # Streamlit app
-├── train_pipeline.py # Full ML pipeline
-├── scripts/ # Demo pipeline
-├── models/ # Saved models
-├── results/ # Metrics and outputs
-├── images/ # Visualizations
-├── data/ # Dataset description
-├── notebooks/ # notebook explanation
+├── app.py # Streamlit application for real-time predictions
+├── train_pipeline.py # Full ML pipeline (preprocessing, training, evaluation)
+├── scripts/ # Demo pipeline for simplified model
+├── models/ # Saved trained models (full + demo)
+├── results/ # Evaluation metrics and output files
+├── images/ # Visualization plots used in README
+├── data/ # Dataset description (data not included)
+├── notebooks/ # Explanation of notebook usage
 ```
 
 ## 16. Requirements
