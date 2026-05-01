@@ -182,27 +182,27 @@ Important:
 
 ### 1. Install dependencies
 
-$ pip install -r requirements.txt
+pip install -r requirements.txt
 
 ### 2. Run the Streamlit app
 
-$ streamlit run app.py
+streamlit run app.py
 
 ---
 
 ## 15. Repository Structure
 
+```
 loan-approval-prediction/
 ├── app.py
 ├── README.md
 ├── requirements.txt
 ├── models/
-│ ├── final_model.pkl
-│ └── demo/
 ├── results/
 ├── images/
+```
 ---
 
 ## 16. Requirements
 
-$ pip install -r requirements.txt
+pip install -r requirements.txt
