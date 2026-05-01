@@ -1,0 +1,9 @@
+{
+  "final_model_name": "Logistic Regression",
+  "test_roc_auc": 0.9738354742560834,
+  "test_precision": 0.7784503631961259,
+  "test_recall": 0.8967921896792189,
+  "test_f1": 0.8334413480233311,
+  "test_accuracy": 0.9143333333333333,
+  "selected_threshold": 0.6
+}
