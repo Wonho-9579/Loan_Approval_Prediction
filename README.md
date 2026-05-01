@@ -181,13 +181,13 @@ Important:
 ## 14. How to Run
 
 ### 1. Install dependencies
-
+```
 pip install -r requirements.txt
-
+```
 ### 2. Run the Streamlit app
-
+```
 streamlit run app.py
-
+```
 ---
 
 ## 15. Repository Structure
@@ -204,5 +204,6 @@ loan-approval-prediction/
 ---
 
 ## 16. Requirements
-
+```
 pip install -r requirements.txt
+```
