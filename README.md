@@ -212,5 +212,6 @@ loan-approval-prediction/
 
 ## 16. Requirements
 
-
+```
 pip install -r requirements.txt
+```
