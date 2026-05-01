@@ -176,6 +176,15 @@ Important:
 - The Streamlit demo uses a reduced feature set for usability
 - The demo model is designed for interaction, not full production use
 
+### Demo Pipeline
+
+In addition to the full training pipeline, this project includes a simplified demo pipeline:
+
+- scripts/train_pipeline_demo.py
+
+This script trains a reduced-feature model used in the Streamlit application.
+It is designed for usability and real-time interaction rather than full model performance.
+
 ---
 
 ## 14. How to Run
@@ -184,9 +193,20 @@ Important:
 ```
 pip install -r requirements.txt
 ```
-### 2. Run the Streamlit app
+
+### 2. Run full training pipeline
 ```
-streamlit run app.py
+python train_pipeline.py
+```
+
+### 3. Run demo training pipeline
+```
+python scripts/train_pipeline_demo.py
+```
+
+### 4. Run the Streamlit app
+```
+streamlit run app.pylit run app.py
 ```
 ---
 
