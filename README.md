@@ -36,20 +36,9 @@ https://www.kaggle.com/datasets/lorenzozoppelletto/financial-risk-for-loan-appro
 - Type: Tabular dataset  
 - Size: 20,000 rows × 36 columns  
 
-### Target Variable
-- LoanApproved (0 = Reject, 1 = Approve)
-
-### Key Features
-- CreditScore
-- AnnualIncome
-- LoanAmount
-- LoanDuration
-- MonthlyDebtPayments
-- SavingsAccountBalance
-- CheckingAccountBalance
-- EmploymentStatus
-- PreviousLoanDefaults
-- BankruptcyHistory
+**Note:**  
+The dataset is not included in this repository due to size and licensing.  
+Please download it from the link above.
 
 ---
 
@@ -83,12 +72,10 @@ Three models were trained and compared:
 - Random Forest
 - XGBoost (Advanced Model)
 
-### Model Selection
-
 Logistic Regression was selected as the final model because:
 - Highest validation ROC-AUC (0.9776)
 - Strong test performance
-- High interpretability compared to complex models
+- High interpretability
 
 ---
 
@@ -96,7 +83,6 @@ Logistic Regression was selected as the final model because:
 
 Tools used:
 - Python (scikit-learn, xgboost)
-- Pipeline for preprocessing + modeling
 
 Cross-validation:
 - 5-fold CV used for robustness
@@ -125,65 +111,65 @@ Cross-validation:
 
 ---
 
+### Visualizations
+
+#### Validation ROC Curve
+![ROC Curve](images/validation_roc_curves.png)
+
+#### Model Comparison
+![Model Comparison](images/validation_model_comparison.png)
+
+#### Confusion Matrix
+![Confusion Matrix](images/test_confusion_matrix.png)
+
+---
+
 ## 9. Model Interpretation
 
-Model interpretability was achieved using Logistic Regression coefficients.
+Logistic Regression coefficients were used for interpretability.
 
-Key influential features include:
-- MonthlyIncome
-- LoanToIncomeRatio
-- LoanAmount
-- EmploymentStatus
-- MonthlyDebtBurden
+Key insights:
+- Higher income increases approval probability
+- Higher debt burden decreases approval probability
+- Loan-to-income ratio is a critical decision factor
 
-These features strongly influence the model's predictions.
+#### Feature Importance
+![Feature Importance](images/logistic_feature_importance.png)
 
 ---
 
 ## 10. Key Insights
 
-- Income and debt ratio are the strongest predictors of loan approval
-- Employment stability significantly impacts outcomes
-- Logistic Regression performs competitively with more complex models
-- Threshold tuning improves the balance between precision and recall
+- Income and debt ratio are the strongest predictors
+- Employment stability significantly impacts approval
+- Logistic Regression performs competitively with complex models
+- Threshold tuning improves decision balance
 
 ---
 
 ## 11. Conclusion
 
-This project demonstrates that a simple and interpretable model can achieve high performance in loan approval prediction.
-
-The pipeline is robust, reproducible, and suitable for real-world decision support.
+A simple, interpretable model can achieve strong performance in loan approval prediction.
 
 ---
 
 ## 12. Future Work
 
-- Try additional advanced models (LightGBM, Neural Networks)
+- Try advanced models (LightGBM, Neural Networks)
 - Improve feature engineering
-- Address class imbalance more aggressively
-- Enhance model explainability
-- Deploy as a full web application
+- Address class imbalance further
+- Enhance explainability
+- Full deployment
 
 ---
 
 ## 13. Streamlit Demo Application
 
-This project includes an interactive Streamlit app for real-time predictions.
+This project includes an interactive Streamlit app.
 
-Important:
-- The full training pipeline uses all available features
-- The Streamlit demo uses a reduced feature set for usability
-- The demo model is designed for interaction, not full production use
-
-### Demo Pipeline
-
-In addition to the full training pipeline, this project includes a simplified demo pipeline:
-
-- scripts/train_pipeline_demo.py
-
-This script trains a reduced-feature model used in the Streamlit application.
-It is designed for usability and real-time interaction rather than full model performance.
+- Full pipeline uses all features
+- Demo uses reduced features
+- Designed for usability, not production
 
 ---
 
@@ -193,37 +179,38 @@ It is designed for usability and real-time interaction rather than full model pe
 ```
 pip install -r requirements.txt
 ```
-
 ### 2. Run full training pipeline
 ```
 python train_pipeline.py
 ```
 
-### 3. Run demo training pipeline
+### 3. Run demo pipeline
 ```
 python scripts/train_pipeline_demo.py
 ```
 
 ### 4. Run the Streamlit app
 ```
-streamlit run app.pylit run app.py
+streamlit run app.py
 ```
+
 ---
 
 ## 15. Repository Structure
 
 ```
 loan-approval-prediction/
-├── app.py
-├── README.md
-├── requirements.txt
-├── models/
-├── results/
-├── images/
+├── app.py # Streamlit app
+├── train_pipeline.py # Full ML pipeline
+├── scripts/ # Demo pipeline
+├── models/ # Saved models
+├── results/ # Metrics and outputs
+├── images/ # Visualizations
+├── data/ # Dataset description
+├── notebooks/ # notebook explanation
 ```
----
 
 ## 16. Requirements
-```
+
+
 pip install -r requirements.txt
-```
